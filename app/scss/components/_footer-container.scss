@@ -1,0 +1,15 @@
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 5%;
+    background-color: var(--color-dark);
+    p {
+        font-size: 2rem;
+        line-height: 36px;
+        color: var(--color-text-one);
+        i {
+            color: var(--color-primary-dark);
+        }
+    }
+}

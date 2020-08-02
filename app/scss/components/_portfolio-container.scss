@@ -1,0 +1,148 @@
+            .portfolio-container {
+                grid-area: portfolio;
+                position: relative;
+                z-index: 4;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 80px 5% 80px 5%;
+                >.title {
+                    color: var(--color-text-two);
+                    font-size: 2.8rem;
+                    font-weight: 700;
+                    margin-bottom: 80px;
+                    &::before {
+                        position: relative;
+                        right: 15px;
+                        content: '';
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-color: var(--color-primary);
+                        border: 4px solid var(--color-dark);
+                        box-shadow: 0px 0px 0px 2px var(--color-primary);
+                    }
+                }
+                .cards {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 60px;
+                    justify-items: center;
+                    width: 80%;
+                    margin-bottom: 80px;
+                    @media screen and (min-width: 768px) {
+                        grid-template-columns: 1fr 1fr 1fr;
+                        gap: 25px;
+                        width: 100%;
+                    }
+                    @media screen and (min-width: 992px) {
+                        gap: 80px;
+                        margin-bottom: 80px;
+                    }
+                    .card {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+                        padding: 15px;
+                        background-color: var(--color-grey);
+                        border-radius: 10px;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            z-index: -1;
+                            top: 0;
+                            left: 50%;
+                            display: block;
+                            width: 80%;
+                            height: 23px;
+                            -webkit-transform: translate(-50%, -50%);
+                            transform: translate(-50%, -50%);
+                            background: #66fcf1;
+                            border-radius: 10px;
+                        }
+                        &:hover .image {
+                            display: none;
+                        }
+                        &:hover .tecnologia,
+                        &:hover .link {
+                            display: flex;
+                            animation: Tec-Card-Animation 0.4s linear;
+                            @keyframes Tec-Card-Animation {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+                                25% {
+                                    transform: rotate(10deg)
+                                }
+                                50% {
+                                    transform: rotate(0deg)
+                                }
+                                75% {
+                                    transform: rotate(-10deg)
+                                }
+                                100% {
+                                    transform: rotate(0deg)
+                                }
+                            }
+                        }
+                        &:hover {
+                            box-shadow: 0 1px 8px 1px #344256;
+                            background-color: var(--color-grey);
+                        }
+                        .image {
+                            border-radius: 10px;
+                            margin-bottom: 30px;
+                        }
+                        .subtitle {
+                            color: var(--color-text-two);
+                            font-size: 1.8rem;
+                            font-weight: normal;
+                            line-height: 1.4;
+                            margin-bottom: 14px;
+                        }
+                        .paragraph {
+                            color: var(--color-text-two);
+                            font-size: 1.6rem;
+                            font-weight: lighter;
+                            line-height: 1.4;
+                            margin-bottom: 30px;
+                        }
+                        .tecnologia {
+                            display: none;
+                            justify-content: space-between;
+                        }
+                        .tec {
+                            text-align: center;
+                            display: inline-block;
+                            color: var(--color-primary);
+                            border: 1px solid var(--color-primary);
+                            border-radius: 10px;
+                            margin: 0 auto 30px auto;
+                            padding: 3px 16px;
+                        }
+                        .link {
+                            display: none;
+                            margin: 0 auto;
+                            width: 50%;
+                            font-weight: 500;
+                            font-size: 1.8rem;
+                            line-height: 1.4;
+                            align-items: flex-end;
+                            text-transform: uppercase;
+                            justify-content: center;
+                            color: var(--color-primary);
+                            border-radius: 5px;
+                            padding: 10px;
+                            background-color: var(--color-dark);
+                            opacity: .6;
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }

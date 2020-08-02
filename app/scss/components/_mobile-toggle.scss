@@ -1,0 +1,64 @@
+.mobile-toggle {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    width: 3.5rem;
+    height: .5rem;
+    transition: .2s ease-in-out;
+    user-select: none;
+    cursor: pointer;
+    opacity: .9;
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+    &:hover {
+        opacity: 1;
+    }
+    .mobile {
+        position: relative;
+        top: 0;
+        left: -55px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: -0.022em;
+        color: var(--color-text-two);
+        user-select: none;
+        transition: color 300ms ease-out;
+    }
+    .bar,
+    .bar::before,
+    .bar::after {
+        position: absolute;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 0.4em;
+        border-radius: 2em;
+        background-color: var(--color-text-two);
+        transition: .5s ease-in-out;
+    }
+    .bar::before {
+        content: "";
+        top: -1em;
+    }
+    .bar::after {
+        content: "";
+        top: 1em;
+    }
+    &.-active .bar {
+        background-color: transparent;
+    }
+    &.-active .bar::before {
+        transform: rotate(-135deg) scaleX(.5);
+        background-color: var(--color-text-two);
+        top: 0;
+    }
+    &.-active .bar::after {
+        transform: rotate(135deg) scaleX(.5);
+        background-color: var(--color-text-two);
+        top: 0;
+    }
+}

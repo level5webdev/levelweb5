@@ -1,0 +1,42 @@
+html {
+    font-size: 50%;
+}
+
+
+/* Medium screens (640px) */
+
+@media (min-width: 30rem) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    // grid-template-columns: 1fr;
+    // grid-template-areas: 'header' 'about' 'information' 'skills ' 'portfolio';
+    min-height: 100vh;
+    background-color: var(--color-second);
+    font-family: 'Poppins', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+img {
+    max-width: 100%;
+    border: none;
+    height: auto;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    img {
+        border: 0;
+    }
+}

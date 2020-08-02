@@ -1,0 +1,183 @@
+        .about-container {
+            position: relative;
+            z-index: 3;
+            display: grid;
+            grid-area: about;
+            grid-template-columns: 1fr;
+            grid-template-areas: "about " " data" "item";
+            -webkit-box-align: center;
+            align-items: self-start;
+            justify-items: center;
+            align-content: baseline;
+            gap: 10px;
+            width: 100%;
+            padding: 100px 5% 100px 5%;
+            background-size: 100%;
+            &::before,
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 110%;
+                display: block;
+                background-repeat: no-repeat;
+                background-position: -20px 0;
+            }
+            &::before {
+                content: "";
+                z-index: -2;
+                background-image: url('/assets/images/icons/FUNDO2.svg');
+            }
+            &::after {
+                content: "";
+                z-index: -1;
+                background-image: url('/assets/images/icons/FUNDO1.svg');
+            }
+            @media screen and (min-width: 600px) {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "about about" " data item";
+                &::before,
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 150%;
+                    display: block;
+                    background-repeat: no-repeat;
+                }
+            }
+            >.title {
+                grid-area: about;
+                color: var(--color-text-two);
+                font-size: 2.8rem;
+                font-weight: bold;
+                margin-bottom: 80px;
+                &::before {
+                    position: relative;
+                    right: 15px;
+                    content: '';
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    background-color: var(--color-primary);
+                    border: 4px solid var(--color-dark);
+                    box-shadow: 0px 0px 0px 2px var(--color-primary);
+                }
+            }
+            >.data {
+                justify-self: center;
+                grid-area: data;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                max-width: 80%;
+                @media screen and (min-width: 600px) {
+                    justify-self: start;
+                    text-align: center;
+                }
+                .image {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    border: 5px solid var(--color-dark);
+                    box-shadow: 0px 0px 0px 5px var(--color-primary);
+                    margin-bottom: 15px;
+                    &:hover {
+                        animation: Tec-Card-Animation 0.4s linear;
+                        @keyframes Tec-Card-Animation {
+                            0% {
+                                transform: rotate(0deg);
+                            }
+                            25% {
+                                transform: rotate(10deg)
+                            }
+                            50% {
+                                transform: rotate(0deg)
+                            }
+                            75% {
+                                transform: rotate(-10deg)
+                            }
+                            100% {
+                                transform: rotate(0deg)
+                            }
+                        }
+                    }
+                    @media screen and (min-width: 600px) {
+                        width: 250px;
+                        height: 250px;
+                        border-radius: 50%;
+                        border: 5px solid var
+                    }
+                }
+                .name {
+                    display: block;
+                    color: var(--color-text-two);
+                    font-size: 3rem;
+                    font-weight: normal;
+                    line-height: 1.4;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+                .lists {
+                    display: flex;
+                    width: 100%;
+                    margin-bottom: 15px;
+                    justify-content: center;
+                    .list {
+                        padding: 10px;
+                        .link {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 49px;
+                            height: 49px;
+                            .icon {
+                                width: 100%;
+                                height: 100%;
+                            }
+                            &:hover {
+                                animation: Tec-Card-Animation 0.4s linear;
+                                @keyframes Tec-Card-Animation {
+                                    0% {
+                                        transform: rotate(0deg);
+                                    }
+                                    25% {
+                                        transform: rotate(10deg)
+                                    }
+                                    50% {
+                                        transform: rotate(0deg)
+                                    }
+                                    75% {
+                                        transform: rotate(-10deg)
+                                    }
+                                    100% {
+                                        transform: rotate(0deg)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .item {
+                grid-area: item;
+                display: flex;
+                flex-direction: column;
+                .title {
+                    color: var(--color-text-two);
+                    font-size: 2.8rem;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+                .paragraph {
+                    color: var(--color-text-two);
+                    font-size: 1.6rem;
+                    font-weight: normal;
+                    line-height: 2;
+                }
+            }
+        }
